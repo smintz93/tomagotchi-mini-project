@@ -1,0 +1,31 @@
+body {
+	background-color: grey;
+	align-items: center;
+	
+}
+
+div {
+	display: flex;
+	justify-content: space-around;
+
+}
+
+img {
+	display: flex;
+	
+	margin-left: 250px;
+}
+
+
+ul {
+	border: 2px solid black;
+	justify-content: space-around;
+}
+
+ul li {
+	height: 5px;
+	width: 5px;
+	margin-bottom: 15px
+
+
+}
