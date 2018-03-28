@@ -1,29 +1,29 @@
 console.log("Linked")
 
 let time = 50;
-
+let timer;
 // This happens every refresh // 
 
 
 // START OF GAME. TURNING OFF WHILE TESTING
 
-// const enterName = function(name){
+const enterName = function(name){
 
-// 	const startName = window.prompt("What would you like to name your Dino?")
+	const startName = window.prompt("What would you like to name your Dino?")
 
-// 	const newH2 = $("<h2>")
+	const newH2 = $("<h2>")
 
-// 	newH2.appendTo("header")
+	newH2.appendTo("header")
  
-// 	newH2.text("Hello " + startName +"!")
+	newH2.text("Hello " + startName +"!")
 
-// }
+}
 
-// enterName();
+enterName();
 
 
 
-// window.alert("Click 'Ok' to get started")
+window.alert("Click 'Ok' to get started")
 
 
 
@@ -52,6 +52,14 @@ const dino = () => {
 }
 
 
+const gameOver = () => {
+	$("img").remove()
+	const img = $("<img>")
+	img.appendTo($("body"))
+	img.attr("src", "https://i.pinimg.com/originals/eb/a8/eb/eba8eb5a8e6ac5a8730184596382ae7d.jpg")
+
+}
+
 
 
 
@@ -64,6 +72,21 @@ const updateList = function(){
 	$("#sleepiness").text(" Sleepiness:" + tomogatochiOne.sleepiness);
 	$("#boredom").text(" Boredom:" + tomogatochiOne.boredom);
 	$("#age").text(" Age:" + tomogatochiOne.age);
+
+
+
+	if(tomogatochiOne.hunger >= 11 || tomogatochiOne.sleepiness >= 11 || tomogatochiOne.boredom >= 11) {
+
+			gameOver();
+			window.alert("Dino is dead")
+			console.log("dino is dead")		
+			console.log("Game over")	
+			
+
+			clearInterval(timer);
+			time = 0;
+
+}
 
 
 }
@@ -94,16 +117,20 @@ $("#play").on("click", (e) => {
 	tomogatochiOne.boredom--
 	// setTimer();
 	updateList();
+
+
 })
+
+
 
 
 
 const setTimer = function() {
 	
-	const timer = setInterval(() => {
+	timer = setInterval(() => {
 		time --
 
-		if(time === 40) {
+		if(time === 45) {
 			tomogatochiOne.hunger++
 			tomogatochiOne.sleepiness++
 			tomogatochiOne.boredom++
@@ -111,20 +138,20 @@ const setTimer = function() {
 			updateList();
 		} 
 
-		else if(time === 30) {
+		else if(time === 42) {
 			tomogatochiOne.hunger++
 			tomogatochiOne.sleepiness++
 			tomogatochiOne.boredom++
 			tomogatochiOne.age++;
 			updateList();
 
-		}	else if(time === 25) {
+		}	else if(time === 40) {
 			tomogatochiOne.hunger++
 			tomogatochiOne.sleepiness++
 			tomogatochiOne.boredom++
 			tomogatochiOne.age++;
 			updateList();
-		} else if(time === 15){
+		} else if(time === 38){
 			tomogatochiOne.hunger++
 			tomogatochiOne.sleepiness++
 			tomogatochiOne.boredom++
@@ -140,6 +167,7 @@ const setTimer = function() {
 
 
 			clearInterval(timer)
+
 			time = 50;
 
 		} 
@@ -148,8 +176,6 @@ const setTimer = function() {
 
 
 	}, 1000);
-
-
 
 };
 
@@ -160,12 +186,8 @@ setTimer();
 // 
 
 
-// if(tomogatochiOne.hunger === 10 || tomogatochiOne.sleepiness === 10 || tomogatochiOne.boredom === 10) {
 
-// 		console.log("Dino is dead")
 
-// 		// pass in new Dino 
-// }
 
 
 
