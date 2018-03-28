@@ -1,5 +1,5 @@
 body {
-	background-color: grey;
+	background-color: lightblue;
 	align-items: center;
 	
 }
@@ -7,19 +7,22 @@ body {
 div {
 	display: flex;
 	justify-content: space-around;
-
+	
 }
 
 img {
 	display: flex;
+	width: 30%;
+	margin-left: 30%;
 	
-	margin-left: 25%;
+	
 }
 
 
 ul {
-	border: 2px solid black;
+	border: 1px solid black;
 	justify-content: space-around;
+	background-color: yellow;
 }
 
 ul li {
@@ -28,4 +31,16 @@ ul li {
 	margin-bottom: 15px
 
 
+}
+
+
+
+
+#timer {
+	font-size: 20px;
+	margin-left: 85%;
+	height: 5px;
+	width: 5px;
+	background-color: lightblue;
+	border: 2px solid black;
 }
