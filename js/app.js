@@ -181,15 +181,3 @@ const setTimer = function() {
 
 
 setTimer();
-
-
-// 
-
-
-
-
-
-
-
-
-

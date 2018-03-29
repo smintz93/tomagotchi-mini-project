@@ -14,6 +14,7 @@ img {
 	display: flex;
 	width: 30%;
 	margin-left: 30%;
+	align-content: center
 	
 	
 }
@@ -35,12 +36,23 @@ ul li {
 
 
 
-
 #timer {
 	font-size: 20px;
 	margin-left: 85%;
 	height: 5px;
 	width: 5px;
 	background-color: lightblue;
-	border: 2px solid black;
+	border: 1px solid black;
+}
+
+.game-over {
+	text-align: center;
+}
+
+#instructions {
+	text-align: right;
+	border: 1px solid black;
+	margin-top: 20px;
+	background-color: yellow;
+
 }
