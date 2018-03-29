@@ -11,6 +11,18 @@ const enterName = function(name){
 
 	const startName = window.prompt("What would you like to name your Dino?")
 
+
+
+
+	$("#start").on("click", () => {
+		setTimer();
+		updateList();
+	})
+
+
+	// initialize your tamagotchi
+
+
 	const newH2 = $("<h2>")
 
 	newH2.appendTo("header")
@@ -19,11 +31,17 @@ const enterName = function(name){
 
 }
 
+// Want to call function here to put the numbers on the screen as the game/before game starts
+
+
+
+
+
 enterName();
 
 
 
-window.alert("Click 'Ok' to get started")
+// window.alert("Click 'Ok' to get started")
 
 
 
@@ -37,6 +55,15 @@ class Tomogatochi {
 		this.boredom = boredom;
 		this.age = age;
 
+	}
+	feed(){
+		this.hunger--
+	}
+	sleep(){
+		this.sleepiness--
+	}
+	play(){
+		this.boredom--
 	}
 	
 
@@ -95,8 +122,9 @@ const updateList = function(){
 
 $("#feed").on("click", (e) => {
 
-	tomogatochiOne.hunger--
-
+	
+	// tomogatochiOne.hunger--
+	tomogatochiOne.feed()
 	// setTimer();
 	updateList();
 })
@@ -105,7 +133,8 @@ $("#feed").on("click", (e) => {
 
 $("#sleep").on("click", (e) => {
 
-	tomogatochiOne.sleepiness--
+	tomogatochiOne.sleep();	
+	// tomogatochiOne.sleepiness--
 
 	// setTimer();
 	updateList();
@@ -114,7 +143,8 @@ $("#sleep").on("click", (e) => {
 
 $("#play").on("click", (e) => {
 
-	tomogatochiOne.boredom--
+	tomogatochiOne.play();
+	// tomogatochiOne.boredom--
 	// setTimer();
 	updateList();
 
@@ -180,4 +210,4 @@ const setTimer = function() {
 };
 
 
-setTimer();
+// setTimer();
